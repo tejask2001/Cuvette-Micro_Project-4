@@ -11,7 +11,7 @@ btn.forEach(button=>{
             if((button.innerText=='+' || button.innerText=='-' || button.innerText=='*' || button.innerText=='/') && operation==""){
                 return
             }
-            else if((button.innerText=='+' || button.innerText=='-' || button.innerText=='*' || button.innerText=='/') && (operation.slice(-1)=='+' || operation.slice(-1)=='-' || operation.slice(-1)=='*' || operation.slice(-1)=='/')){
+            else if((button.innerText=='+' || button.innerText=='-' || button.innerText=='*' || button.innerText=='/') && (operation.slice(-1)=='+' || operation.slice(-1)=='-' || operation.slice(-1)=='*' || operation.slice(-1)=='/' || operation.slice(-1)=='.' )){
                 return
             }
             else{
@@ -20,6 +20,8 @@ btn.forEach(button=>{
         }
         
         else if(button.innerText=='='){
+            if(operation=="")
+                return
             operation=eval(operation)
         }
         else if(button.innerText=='.' && (input.includes('.') || input=="")){
